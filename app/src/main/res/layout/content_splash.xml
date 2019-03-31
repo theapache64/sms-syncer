@@ -1,15 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.smssyncer.ui.activities.splash.SplashViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:showIn="@layout/activity_splash"
-        tools:context=".ui.activities.splash.SplashActivity">
+        tools:context=".ui.activities.splash.SplashActivity"
+        tools:showIn="@layout/activity_splash">
 
 
+        <!--Message-->
+        <ImageView
+            android:id="@+id/iv_message"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_message_black"
+            android:tint="@color/grey_300"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_arrow_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <!--Arrow-->
+        <ImageView
+            android:id="@+id/iv_arrow_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_keyboard_arrow_right_black"
+            android:tint="@color/grey_400"
+            app:layout_constraintBottom_toBottomOf="@id/iv_message"
+            app:layout_constraintEnd_toStartOf="@id/iv_sync"
+            app:layout_constraintStart_toEndOf="@id/iv_message"
+            app:layout_constraintTop_toTopOf="@id/iv_message" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!--Sync-->
+        <ImageView
+            android:id="@+id/iv_sync"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_sync_black"
+            android:tint="@color/grey_800"
+            app:layout_constraintBottom_toBottomOf="@id/iv_arrow_1"
+            app:layout_constraintEnd_toStartOf="@id/iv_arrow_2"
+            app:layout_constraintStart_toEndOf="@id/iv_arrow_1"
+            app:layout_constraintTop_toTopOf="@id/iv_arrow_1" />
+
+        <!--Arrow-->
+        <ImageView
+            android:id="@+id/iv_arrow_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_keyboard_arrow_right_black"
+            android:tint="@color/grey_400"
+            app:layout_constraintBottom_toBottomOf="@id/iv_sync"
+            app:layout_constraintEnd_toStartOf="@id/iv_email"
+            app:layout_constraintStart_toEndOf="@id/iv_sync"
+            app:layout_constraintTop_toTopOf="@id/iv_sync" />
+
+        <!--Email-->
+        <ImageView
+            android:id="@+id/iv_email"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_email_black_24dp"
+            android:tint="@color/grey_300"
+            app:layout_constraintBottom_toBottomOf="@id/iv_arrow_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_arrow_2"
+            app:layout_constraintTop_toTopOf="@id/iv_arrow_2" />
+
+        <!--Version-->
+        <TextView
+            android:id="@+id/tv_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:text="@{viewModel.versionNumber}"
+            android:textColor="@color/grey_400"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="v1.0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

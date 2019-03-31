@@ -2,4 +2,6 @@
     <string name="app_name">SMS-Syncer</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_splash">SplashActivity</string>
+    <string name="hint_email">Enter your email here</string>
+    <string name="action_set_email">SET EMAIL</string>
 </resources>
