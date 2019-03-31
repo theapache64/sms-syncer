@@ -6,8 +6,8 @@
     <string name="action_set_email">SET EMAIL</string>
     <string name="main_message_invalid_email">Invalid email %s</string>
     <string name="main_message_email_set">Success, email saved.</string>
-    <string name="main_message_sending_test_email">Sending test email...</string>
+    <string name="main_message_sending_test_email">Sending test email…</string>
     <string name="main_message_error_test_mail">Failed to send test mail : %s</string>
     <string name="main_dialog_title_email_set">Congratulations</string>
-    <string name="main_dialog_message_email_set">Your email has been successfully intergated with the SMS-Syncer. Try sending an SMS to this device and check your inbox. Thank you.</string>
+    <string name="main_dialog_message_email_set">Your email has been successfully integrated with the SMS-Syncer. Try sending a SMS to this device and check your inbox. Thank you.</string>
 </resources>
