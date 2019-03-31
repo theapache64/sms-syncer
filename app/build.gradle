@@ -9,7 +9,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 28
         versionCode 1
-        versionName "1.0"
+        versionName "0.0.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -37,9 +37,17 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.2-alpha02'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-alpha02'
 
+    // MaterialColors
+    implementation 'com.theah64.materialcolors:materialcolors:1.0.0'
+
     // Lifecycle extension
     implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0-alpha03'
 
-    // MaterialColors
-    implementation 'com.theah64.materialcolors:materialcolors:1.0.0'
+    // Dexter
+    implementation 'com.karumi:dexter:5.0.0'
+
+    // SafeMail
+    implementation 'com.theah64.safemail:safemail:1.0.1'
+
+
 }

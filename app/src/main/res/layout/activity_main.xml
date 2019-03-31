@@ -34,6 +34,7 @@
         </com.google.android.material.appbar.AppBarLayout>
 
         <include
+            android:id="@+id/i_content_main"
             layout="@layout/content_main"
             bind:clickHandler="@{clickHandler}"
             bind:viewModel="@{viewModel}" />
