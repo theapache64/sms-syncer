@@ -30,9 +30,20 @@ class PrefHelper private constructor(context: Context) {
             .apply()
     }
 
+    internal fun getBoolean(key: String): Boolean {
+        return sharedPref.getBoolean(key, false)
+    }
+
+    internal fun putBoolean(key: String, value: Boolean) {
+        sharedPref.edit()
+            .putBoolean(key, value)
+            .apply()
+    }
+
     companion object {
 
         val KEY_EMAIL = "email"
+        val KEY_IS_TERMS_ACCEPTED = "is_terms_accepted"
 
         @SuppressLint("StaticFieldLeak")
         private var instance: PrefHelper? = null

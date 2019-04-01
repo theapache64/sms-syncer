@@ -4,4 +4,5 @@ import androidx.lifecycle.ViewModel
 
 class SplashViewModel : ViewModel() {
     lateinit var versionNumber: String
+    var isShowPrivacyPolicyOnResume: Boolean = false
 }

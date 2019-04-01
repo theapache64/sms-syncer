@@ -10,4 +10,10 @@
     <string name="main_message_error_test_mail">Failed to send test mail : %s</string>
     <string name="main_dialog_title_email_set">Congratulations</string>
     <string name="main_dialog_message_email_set">Your email has been successfully integrated with the SMS-Syncer. Try sending a SMS to this device and check your inbox. Thank you.</string>
+    <string name="splash_dialog_title_privacy_policy">Privacy Policy</string>
+    <string name="splash_dialog_message_privacy_policy">By using SMS-Syncer, you agree to the terms and privacy policy.</string>
+    <string name="action_accept">ACCEPT</string>
+    <string name="action_decline">DECLINE</string>
+    <string name="splash_toast_terms_declined">You must accept the terms to use this app.</string>
+    <string name="action_view_policy">POLICY</string>
 </resources>
