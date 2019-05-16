@@ -61,16 +61,16 @@ class SplashActivity : AppCompatActivity() {
             .setTitle(R.string.splash_dialog_title_privacy_policy)
             .setMessage(R.string.splash_dialog_message_privacy_policy)
             .setCancelable(false)
-            .setPositiveButton(R.string.action_accept) { dialogInterface: DialogInterface, i: Int ->
+            .setPositiveButton(R.string.action_accept) { _: DialogInterface, _: Int ->
                 // accepted
                 prefHelper.putBoolean(PrefHelper.KEY_IS_TERMS_ACCEPTED, true)
                 moveToMain()
             }
-            .setNegativeButton(R.string.action_decline) { dialogInterface: DialogInterface, i: Int ->
+            .setNegativeButton(R.string.action_decline) { _: DialogInterface, _: Int ->
                 Toast.makeText(this, R.string.splash_toast_terms_declined, Toast.LENGTH_SHORT).show();
                 finish()
             }
-            .setNeutralButton(R.string.action_view_policy) { dialogInterface: DialogInterface, i: Int ->
+            .setNeutralButton(R.string.action_view_policy) { _: DialogInterface, _: Int ->
                 openPolicy()
                 viewModel.isShowPrivacyPolicyOnResume = true
             }
