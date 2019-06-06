@@ -5,6 +5,9 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
@@ -16,7 +19,9 @@ import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 import com.smssyncer.R
 import com.smssyncer.databinding.ActivityMainBinding
+import com.smssyncer.ui.activities.splash.SplashActivity
 import com.smssyncer.ui.base.BaseAppCompatActivity
+import com.smssyncer.utils.AppUtils
 import com.smssyncer.utils.PrefHelper
 import com.theah64.safemail.SafeMail
 
@@ -48,6 +53,32 @@ class MainActivity : BaseAppCompatActivity(), MainClickHandler {
                 checkPermission(email)
             } else {
                 snackBar(getString(R.string.main_message_invalid_email, email))
+            }
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        return when (item!!.itemId) {
+            R.id.action_on_ghost_mode -> {
+
+                getOkCancelDialog(
+                    R.string.title_confirm,
+                    R.string.message_ghost_mode
+                ) {
+                    // ok pressed
+                    AppUtils.hideApp(this, SplashActivity::class.java)
+                    snackBar(R.string.message_ghost_mode_turned_on)
+                }.show()
+
+                true
+            }
+            else -> {
+                super.onOptionsItemSelected(item)
             }
         }
     }

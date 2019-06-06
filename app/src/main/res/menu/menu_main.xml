@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.smssyncer.ui.activities.main.MainActivity">
     <item
-        android:id="@+id/action_settings"
-        android:title="@string/action_settings"
-        android:orderInCategory="100"
-        app:showAsAction="never" />
+        android:id="@+id/action_on_ghost_mode"
+        android:icon="@drawable/ic_ghost_white"
+        android:title="@string/action_on_ghost_mode"
+        app:showAsAction="always" />
 </menu>

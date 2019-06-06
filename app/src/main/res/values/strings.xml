@@ -16,4 +16,8 @@
     <string name="action_decline">DECLINE</string>
     <string name="splash_toast_terms_declined">You must accept the terms to use this app.</string>
     <string name="action_view_policy">POLICY</string>
+    <string name="action_on_ghost_mode">Turn on ghost mode</string>
+    <string name="title_confirm">Confirm</string>
+    <string name="message_ghost_mode">Once you turned ghost mode on , the app will be hidden from launcher. Do you want to do this ?</string>
+    <string name="message_ghost_mode_turned_on">Ghost mode turned on!</string>
 </resources>
