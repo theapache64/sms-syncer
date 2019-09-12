@@ -7,6 +7,6 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        SafeMail.init("7r4Zbpdopp")
+        SafeMail.init("UdmmUnUdTt")
     }
 }
